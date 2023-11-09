@@ -42,7 +42,6 @@ Lets take a look inside the `src` folder
  npm run start
  ```
 
-
 ### Testing the API
 
 Use an API testing software like Postman to make the requests to the following endpoints:
@@ -79,3 +78,24 @@ Use an API testing software like Postman to make the requests to the following e
 - To delete a book, make a `delete` request to ```/api/v1/books/<book_id>```
 
   Replace <book_id> with an actual id.
+
+### Deployment
+
+The API has been deployed on an AWS EC2 running on Ubuntu. It is set-up using pm2 which acts as the process manager. 
+The public IP of the EC2 is 
+  ```
+  13.200.55.255
+  ```
+and the application is running on port
+  ```
+  3000
+  ```
+Hence, all the API endpoints listed in the previous section can be accessed at 
+  ```
+  13.200.55.255:3000
+  ```
+
+Ex:
+  ```
+  https://13.200.55.255:3000/api/v1/books
+  ```

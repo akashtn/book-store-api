@@ -9,7 +9,13 @@ class CrudRepository {
 
   async createOne(data) {
     const response = await this.model.create(data);
-    return response;
+    const { _id, title, author, summary } = response;
+    return {
+      _id,
+      title,
+      author,
+      summary
+    };
   }
 
   async deleteOne(id) {
@@ -21,7 +27,7 @@ class CrudRepository {
   }
 
   async getOne(id) {
-    const response = await this.model.findOne({ _id: id });
+    const response = await this.model.findOne({ _id: id }, '_id title author summary');
     if (!response) {
       throw new AppError('Not able to find the resource', StatusCodes.NOT_FOUND);
     }
@@ -29,7 +35,7 @@ class CrudRepository {
   }
 
   async getAll() {
-    const response = await this.model.find();
+    const response = await this.model.find(null, '_id title author summary').sort({ 'author': 1, 'title': 1 });
     return response;
   }
 

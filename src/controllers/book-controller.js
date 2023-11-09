@@ -3,6 +3,10 @@ const { StatusCodes } = require("http-status-codes");
 const { BookService } = require("../services");
 const { SuccessResponse, ErrorResponse } = require("../utils/common");
 
+/**
+ * Returns a single book that matches the id passed
+ * @param {number} req.params.id - id of the book
+ */
 const getBook = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -20,6 +24,9 @@ const getBook = async (req, res, next) => {
   }
 }
 
+/**
+ * Returns all the books
+ */
 const getBooks = async (req, res, next) => {
   try {
     const books = await BookService.getAllBooks();
@@ -36,6 +43,12 @@ const getBooks = async (req, res, next) => {
   }
 }
 
+/**
+ * Returns all the books
+ * @param {string} req.body.title - title of the book (max 100 characters)
+ * @param {string} req.body.author - author of the book
+ * @param {string} req.body.summary - summary of the book (min 200 characters and max 500 characters)
+ */
 const createBook = async (req, res, next) => {
   try {
     const book = await BookService.createOneBook(req.body);
@@ -53,6 +66,13 @@ const createBook = async (req, res, next) => {
   }
 }
 
+/**
+ * Updates a single book that matches the id passed
+ * @param {string} req.params.id - id of the book
+ * @param {string} [req.body.title] - title of the book (max 100 characters)
+ * @param {string} [req.body.author] - author of the book
+ * @param {string} [req.body.summary] - summary of the book (min 200 characters and max 500 characters)
+ */
 const updateBook = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -77,6 +97,10 @@ const updateBook = async (req, res, next) => {
   }
 }
 
+/**
+ * Deletes a single book that matches the id passed
+ * @param {number} req.params.id - id of the book
+ */
 const deleteBook = async (req, res, next) => {
   try {
     const { id } = req.params;
