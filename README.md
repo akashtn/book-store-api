@@ -79,6 +79,11 @@ Use an API testing software like Postman to make the requests to the following e
 
   Replace <book_id> with an actual id.
 
+You can fork the postman collection named `Book Store API Dep` at the below linked workspace in order to test the API using Postman:
+  ```
+  https://www.postman.com/crimson-flare-891477/workspace/public-apis
+  ```
+
 ### Deployment
 
 The API has been deployed on an AWS EC2 running on Ubuntu. It is set-up using pm2 which acts as the process manager. 
