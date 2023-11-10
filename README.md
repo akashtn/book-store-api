@@ -57,7 +57,7 @@ Use an API testing software like Postman to make the requests to the following e
   Set the body of the request to JSON and pass a JSON object with title, author and summary keys (all 3 keys are required).
 
   Note: Title can be a maximum of 100 characters.
-        Summary has to be a minimum of 200 characters and can be maximum of 1000 characters.
+        Summary has to be a minimum of 200 characters and can be maximum of 500 characters.
 
   Ex: {
     "title": "hamlet",
