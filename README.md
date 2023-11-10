@@ -97,5 +97,5 @@ Hence, all the API endpoints listed in the previous section can be accessed at
 
 Ex:
   ```
-  https://13.200.55.255:3000/api/v1/books
+  http://13.200.55.255:3000/api/v1/books
   ```
