@@ -10,7 +10,7 @@ const { SuccessResponse, ErrorResponse } = require("../utils/common");
 const getBook = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const books = await BookService.getOneBook({ _id: id });
+    const books = await BookService.getOneBook(id);
     SuccessResponse.data = books;
 
     return res

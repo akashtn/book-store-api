@@ -9,6 +9,9 @@ dotenv.config();
 
 const connectToMongoDB = require('./config/database-config');
 const apiRoutes = require('./routes');
+const AppError = require('./utils/errors/app-error');
+const { StatusCodes } = require('http-status-codes');
+const { ErrorResponse } = require('./utils/common');
 
 const app = express();
 
@@ -40,8 +43,13 @@ app.use(xss());
 // Routing
 app.use('/api', apiRoutes);
 
+app.all('*', (req, res, next) => {
+  ErrorResponse.error = { message: `Can't find ${req.originalUrl} on this server!` }
+  return res.status(StatusCodes.NOT_FOUND).json(ErrorResponse)
+});
+
 // Server
-app.listen(process.env.SERVER_PORT, async () => {
+const server = app.listen(process.env.SERVER_PORT, async () => {
   console.log('Server started...');
   await connectToMongoDB();
   console.log('Mongo db connected');
