@@ -20,7 +20,10 @@ Lets take a look inside the `src` folder
 
 ### Setup the project locally
 
- - Download this repository from github and open it in your favourite text editor. 
+ - Clone the below repository from github and open it in your favourite text editor. 
+  ```
+  https://github.com/akashtn/book-store-api
+  ```
   
  - Go inside the folder path and execute the following command:
   ```
