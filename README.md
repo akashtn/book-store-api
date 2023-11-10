@@ -28,12 +28,12 @@ Lets take a look inside the `src` folder
   ```
  - In the root directory create a `.env` file and add the following env variables
     ```
-        PORT=<port number of your choice>
+        SERVER_PORT=<port number of your choice>
         DB_PASSWORD=<enter the db password here>
     ```
     ex: 
     ```
-        PORT=3000
+        SERVER_PORT=3000
         DB_PASSWORD=password
     ```
 
