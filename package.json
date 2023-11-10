@@ -19,6 +19,7 @@
     "http-status-codes": "^2.3.0",
     "mongoose": "^8.0.0",
     "nodemon": "^3.0.1",
+    "pm2": "^5.3.0",
     "xss-clean": "^0.1.4"
   }
 }
